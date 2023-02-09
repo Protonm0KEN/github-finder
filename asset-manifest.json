@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/github-finder/static/css/main.b2fec4be.css",
-    "main.js": "/github-finder/static/js/main.25fa85f4.js",
+    "main.css": "/github-finder/static/css/main.f60d21a1.css",
+    "main.js": "/github-finder/static/js/main.4bdb3ee3.js",
+    "static/media/OpenSans-Medium.ttf": "/github-finder/static/media/OpenSans-Medium.a4894b36b47378c77c5f.ttf",
+    "static/media/OpenSans-Regular.ttf": "/github-finder/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
+    "static/media/OpenSans-Bold.ttf": "/github-finder/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
     "index.html": "/github-finder/index.html",
-    "main.b2fec4be.css.map": "/github-finder/static/css/main.b2fec4be.css.map",
-    "main.25fa85f4.js.map": "/github-finder/static/js/main.25fa85f4.js.map"
+    "main.f60d21a1.css.map": "/github-finder/static/css/main.f60d21a1.css.map",
+    "main.4bdb3ee3.js.map": "/github-finder/static/js/main.4bdb3ee3.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2fec4be.css",
-    "static/js/main.25fa85f4.js"
+    "static/css/main.f60d21a1.css",
+    "static/js/main.4bdb3ee3.js"
   ]
 }
