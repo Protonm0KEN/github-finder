@@ -1,0 +1,112 @@
+.user{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__sorting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-top: 20px;
+    &-repository{
+      background: #FFFFFF;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 585px;
+      padding: 10px;
+    }
+    &-title{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 120%;
+      text-transform: capitalize;
+      color: var(--grey);
+    }
+    &-buttons{
+      display: flex;
+      column-gap: 2px;
+      align-items: center;
+      padding: 2px;
+      background: #E0E0E0;
+      border-radius: 4px;
+      .user__sorting-button{
+        background: #E0E0E0;
+        border-radius: 4px;
+        padding: 6px 37px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 120%;
+        color: var(--grey);
+      }
+    }
+  }
+  &__card{
+    display: flex;
+    padding: 13px 31px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    width: fit-content;
+    &-infoTxt{
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--grey);
+      span{
+        font-weight: 400;
+      }
+    }
+    &-left{
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    &-right{
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 10px;
+    }
+    &-img{
+      border: 1px solid var(--grey);
+      border-radius: 6px;
+      max-width: 100px;
+      max-height: 100px;
+    }
+    &-button{
+      padding: 10px;
+      background: var(--grey);
+      border-radius: 6px;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+}
+.repository{
+  &-title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    color: #000000;
+    text-transform: uppercase;
+  }
+  &-starsCount{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #000000;
+  }
+  &__repository-button{
+    background: var(--grey);
+    padding: 10px 15px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border-radius: 6px;
+  }
+}

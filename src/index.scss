@@ -1,0 +1,23 @@
+@import 'Styles/variables';
+@import 'Styles/fonts.scss';
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  border: none;
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+.container{
+  max-width: 625px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+button{
+  cursor: pointer;
+}
