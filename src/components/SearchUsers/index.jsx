@@ -18,7 +18,7 @@ const SearchUsers = () => {
     useEffect(() => {
         dispatch(loadUserRepos(reposUrl))
         return dispatch(loadUser(url))
-    }, [url]);
+    }, [dispatch, reposUrl, url]);
     //* REDUX
     const showLink = () => {
         console.log(`Ссылка введенная пользователем: ${url}`)
@@ -29,11 +29,12 @@ const SearchUsers = () => {
         setReposUrl(`https://api.github.com/users/${inputValue}/repos`)
         setInputValue("")
     }
-    const openInfoInConsole = (e) => {
+    const openInfoInConsole = () => {
         if(url) {
             showLink()
             console.log(`Пользователь гитхаб: ${user ? user.name : "Пользователь не найден"}`)
             console.log("Репозитории пользователя github: ")
+            // eslint-disable-next-line array-callback-return
             console.log(repos.map((repo) => {
                 console.log(repo)
             }))

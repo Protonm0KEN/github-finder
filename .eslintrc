@@ -2,7 +2,7 @@
   "extends": [
     "react-app",
     "react-app/jest",
-    "eslint:recommended",
+    "eslint:recommended"
   ],
   "rules": {
     "quotes": ["warn", "double"],
