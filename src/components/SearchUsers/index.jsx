@@ -27,7 +27,6 @@ const SearchUsers = () => {
         e.preventDefault()
         setUrl(`https://api.github.com/users/${inputValue}`)
         setReposUrl(`https://api.github.com/users/${inputValue}/repos`)
-        setInputValue("")
     }
     const openInfoInConsole = () => {
         if(url) {

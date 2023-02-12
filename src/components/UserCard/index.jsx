@@ -3,7 +3,7 @@ import style from "./UserCard.module.scss";
 
 
 const UserCard = ({dataOfUser, Repositories}) => {
-    let date = dataOfUser.created_at
+    let date = dataOfUser.created_at.substring(0, 10)
     return (
         <div>
             <div className={style["user"]}>
@@ -28,22 +28,21 @@ const UserCard = ({dataOfUser, Repositories}) => {
                         <button className={style["user__sorting-button"]}>Дата</button>
                     </div>
                     <div className={style["user__sorting-repositores"]}>
-                        {Repositories.map((repo) => {
-                            const date = repo.updated_at
+                        {Repositories.map((repository, index) => {
+                            const {stargazers_count, name, svn_url} = repository
                             return(
-                                <div key = {repo.id} className={style["user__sorting-repository"]}>
+                                <div key = {index} className={style["user__sorting-repository"]}>
                                     <div className={style["user__sorting-repository-left"]}>
-                                        <p className={style["repository-title"]}>{repo.name}</p>
-                                        <p className={style["repository-starsCount"]}>Количество звезд: {repo.stargazers_count}</p>
-                                        <p className={style["repository-dateOfCreation"]}>Дата добавления: {date.substring(0, 10)}</p>
+                                        <p className={style["repository-title"]}>{name}</p>
+                                        <p className={style["repository-starsCount"]}>Количество звезд: {stargazers_count}</p>
+                                        <p className={style["repository-dateOfCreation"]}>Дата добавления: {date}</p>
                                     </div>
                                     <div className={style["user__sorting-repository-right"]}>
-                                        <a target="_blank" href = {repo.svn_url} className={style["repository__repository-button"]} rel="noreferrer">ПОСЕТИТЬ</a>
+                                        <a target="_blank" href = {svn_url} className={style["repository__repository-button"]} rel="noreferrer">ПОСЕТИТЬ</a>
                                     </div>
                                 </div>
-                                )
-                            })
-                        }
+                            )
+                        })}
                     </div>
                 </div>
             </div>

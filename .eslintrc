@@ -6,6 +6,7 @@
   ],
   "rules": {
     "quotes": ["warn", "double"],
-    "no-unreachable": "off"
+    "no-unreachable": "off",
+    "no-unused-vars": "warn"
   }
 }
