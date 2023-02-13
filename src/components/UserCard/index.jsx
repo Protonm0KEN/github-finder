@@ -4,28 +4,8 @@ import style from "./UserCard.module.scss";
 
 
 const UserCard = ({dataOfUser, Repositories}) => {
-    const [isStars, setIsStars] = React.useState(false);
-    const [isName, setIsName] = React.useState(false);
-    const [isDate, setIsDate] = React.useState(false);
     const date = dataOfUser.created_at.substring(0, 10);
 
-    function sortUsersByStars() {
-        setIsStars(true);
-        setIsName(false);
-        setIsDate(false);
-    }
-
-    function sortUsersByName() {
-        setIsName(true);
-        setIsStars(false);
-        setIsDate(false);
-    }
-
-    function sortUsersByDate() {
-        setIsDate(true);
-        setIsStars(false);
-        setIsName(false);
-    }
 
     return (
         <div>
@@ -51,87 +31,32 @@ const UserCard = ({dataOfUser, Repositories}) => {
                 <div className={style["user__sorting"]}>
                     <h2 className={style["user__sorting-title"]}>Сортировка</h2>
                     <div className={style["user__sorting-buttons"]}>
-                        <button onClick={sortUsersByName} className={`${style["user__sorting-button"]}`}>Имя</button>
-                        <button onClick={sortUsersByStars} className={style["user__sorting-button"]}>Звезды</button>
-                        <button onClick={sortUsersByDate} className={style["user__sorting-button"]}>Дата</button>
+                        <button className={`${style["user__sorting-button"]}`}>Имя</button>
+                        <button className={style["user__sorting-button"]}>Звезды</button>
+                        <button className={style["user__sorting-button"]}>Дата</button>
                     </div>
                     <div className={style["user__sorting-repositores"]}>
-                        {/*{Repositories.map((repository, index) => {*/}
-                        {/*    const {stargazers_count, name, svn_url} = repository*/}
-                        {/*    return(*/}
-                        {/*        <div key = {index} className={style["user__sorting-repository"]}>*/}
-                        {/*            <div className={style["user__sorting-repository-left"]}>*/}
-                        {/*                <p className={style["repository-title"]}>{name}</p>*/}
-                        {/*                <p className={style["repository-starsCount"]}>Количество звезд: {stargazers_count}</p>*/}
-                        {/*                <p className={style["repository-dateOfCreation"]}>Дата добавления: {date}</p>*/}
-                        {/*            </div>*/}
-                        {/*            <div className={style["user__sorting-repository-right"]}>*/}
-                        {/*                <a target="_blank" href = {svn_url} className={style["repository__repository-button"]} rel="noreferrer">ПОСЕТИТЬ</a>*/}
-                        {/*            </div>*/}
-                        {/*        </div>*/}
-                        {/*    )*/}
-                        {/*})}*/}
-                        {isStars === true ? Repositories.sort(function (a, b) {
-                            if (a.stargazers_count > b.stargazers_count) return -1;
-                        }).map((repo, index) => {
-                            const {stargazers_count, name, svn_url, created_at} = repo;
-                            return (
-                                <div key={index} className={style["user__sorting-repository"]}>
+                        {Repositories.map((repository, index) => {
+                            const {stargazers_count, name, svn_url} = repository;
+                            return(
+                                <div key = {index} className={style["user__sorting-repository"]}>
                                     <div className={style["user__sorting-repository-left"]}>
                                         <p className={style["repository-title"]}>{name}</p>
-                                        <p className={style["repository-starsCount"]}>Количество
-                                            звезд: {stargazers_count}</p>
-                                        <p className={style["repository-dateOfCreation"]}>Дата
-                                            добавления: {created_at.substring(0, 10)}</p>
+                                        <p className={style["repository-starsCount"]}>Количество звезд: {stargazers_count}</p>
+                                        <p className={style["repository-dateOfCreation"]}>Дата добавления: {date}</p>
                                     </div>
                                     <div className={style["user__sorting-repository-right"]}>
-                                        <a target="_blank" href={svn_url}
+                                        <a
+                                            target="_blank"
+                                            href = {svn_url}
                                             className={style["repository__repository-button"]}
-                                            rel="noreferrer">ПОСЕТИТЬ</a>
+                                            rel="noreferrer">
+                                            ПОСЕТИТЬ
+                                        </a>
                                     </div>
                                 </div>
                             );
-                        }) : isDate === true ? Repositories.sort(function (a, b) {
-                            if (a.created_at.substring(0, 10) > b.created_at.substring(0, 10)) return 1;
-                        }).map((repo, index) => {
-                            const {stargazers_count, name, svn_url, created_at} = repo;
-                            return (
-                                <div key={index} className={style["user__sorting-repository"]}>
-                                    <div className={style["user__sorting-repository-left"]}>
-                                        <p className={style["repository-title"]}>{name}</p>
-                                        <p className={style["repository-starsCount"]}>Количество
-                                            звезд: {stargazers_count}</p>
-                                        <p className={style["repository-dateOfCreation"]}>Дата
-                                            добавления: {created_at.substring(0, 10)}</p>
-                                    </div>
-                                    <div className={style["user__sorting-repository-right"]}>
-                                        <a target="_blank" href={svn_url}
-                                            className={style["repository__repository-button"]}
-                                            rel="noreferrer">ПОСЕТИТЬ</a>
-                                    </div>
-                                </div>
-                            );
-                        }) : isName === true ? Repositories.sort(function (a, b) {
-                            if (a.name > b.name) return 1;
-                        }).map((repo, index) => {
-                            const {stargazers_count, name, svn_url, created_at} = repo;
-                            return (
-                                <div key={index} className={style["user__sorting-repository"]}>
-                                    <div className={style["user__sorting-repository-left"]}>
-                                        <p className={style["repository-title"]}>{name}</p>
-                                        <p className={style["repository-starsCount"]}>Количество
-                                            звезд: {stargazers_count}</p>
-                                        <p className={style["repository-dateOfCreation"]}>Дата
-                                            добавления: {created_at.substring(0, 10)}</p>
-                                    </div>
-                                    <div className={style["user__sorting-repository-right"]}>
-                                        <a target="_blank" href={svn_url}
-                                            className={style["repository__repository-button"]}
-                                            rel="noreferrer">ПОСЕТИТЬ</a>
-                                    </div>
-                                </div>
-                            );
-                        }) : ""}
+                        })}
                     </div>
                 </div>
             </div>
