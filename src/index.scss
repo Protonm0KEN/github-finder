@@ -1,6 +1,7 @@
 @import 'Styles/variables';
 @import 'Styles/fonts.scss';
-*{
+
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -12,12 +13,14 @@
   font-family: "Open Sans";
   font-weight: 400;
 }
-.container{
+
+.container {
   max-width: 625px;
   margin: 0 auto;
   padding: 0 15px;
   width: 100%;
 }
-button{
+
+button {
   cursor: pointer;
 }

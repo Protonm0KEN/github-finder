@@ -1,10 +1,11 @@
 
-.header{
+.header {
   display: flex;
   background: white;
   padding: 30px 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  &__page-title{
+
+  &__page-title {
     font-weight: 700;
     font-size: 25px;
     line-height: 120%;
@@ -12,26 +13,31 @@
     color: var(--grey);
   }
 }
-.main{
+
+.main {
   display: flex;
   justify-content: center;
   padding-top: 20px;
   background: #EFEFF2;
-  &__form{
+
+  &__form {
     display: flex;
-    &-input{
+
+    &-input {
       background: #FFFFFF;
       border-radius: 4px;
       padding: 10px 20px;
       width: 585px;
-      &::placeholder{
+
+      &::placeholder {
         font-weight: 400;
         font-size: 14px;
         line-height: 120%;
         color: #C2C2C5;
       }
     }
-    &-button{
+
+    &-button {
       background: var(--grey);
       text-transform: uppercase;
       border-radius: 0px 4px 4px 0px;

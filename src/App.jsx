@@ -1,4 +1,5 @@
 import React from "react";
+
 import SearchUsers from "./components/SearchUsers";
 
 const App = () => {

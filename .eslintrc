@@ -5,8 +5,23 @@
     "eslint:recommended"
   ],
   "rules": {
-    "quotes": ["warn", "double"],
+    "quotes": [
+      "error",
+      "double"
+    ],
     "no-unreachable": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "prefer-const": "warn",
+    "jsx-quotes": ["error", "prefer-double"],
+    "indent": ["warn", 4],
+    "max-len": ["warn", {
+      "code": 140
+    }],
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": ["error", "always"],
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "newlines-between": "always"
+    }],
   }
 }
