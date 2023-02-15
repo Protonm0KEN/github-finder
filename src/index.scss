@@ -13,7 +13,6 @@
   font-family: "Open Sans";
   font-weight: 400;
 }
-
 .container {
   max-width: 625px;
   margin: 0 auto;
@@ -23,4 +22,12 @@
 
 button {
   cursor: pointer;
+}
+.arrowDown-img.name, .arrowDown-img.date, .arrowDown-img.stars{
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+  &.active{
+    transform: rotate(180deg);
+  }
 }

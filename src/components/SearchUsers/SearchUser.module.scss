@@ -48,3 +48,40 @@
     }
   }
 }
+@media (max-width: 750px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  h2{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 375px) {
+  .main{
+    &__form{
+      &-input{
+        width: 345px;
+      }
+    }
+  }
+
+}
+@media (max-width: 320px){
+  .main{
+    &__form{
+      &-input{
+        width: 290px;
+      }
+    }
+  }
+}

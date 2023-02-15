@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+import downArrowIcon from "../../assets/icons/downward-arrow.png";
+
 import style from "./UserCard.module.scss";
 import UserRepository from "./UserRepository";
 
@@ -12,32 +14,82 @@ const UserCard = ({dataOfUser, Repositories}) => {
     const [sortByDate, setSortByDate ] = useState(false);
     const [sortByName, setSortByName ] = useState(false);
 
+    const [clickedByName, setClickedByName] = useState(false);
+    const [clickedByStars, setClickedByStars] = useState(false);
+    const [clickedByDate, setClickedByDate] = useState(false);
 
-
+    function setActiveClass (element){
+        element.classList.toggle("active");
+    }
     function compareNumeric(a, b) {
         if (a > b) {
-            return -1;
+            if(clickedByStars === false){
+                return 1;
+            }else{
+                return -1;
+            }
         }
         if (a === b) return 0;
         if (a < b) {
-            return 1;
+            if(clickedByStars === false){
+                return -1;
+            }else{
+                return 1;
+            }
+        }
+    }
+    function compareDate(a, b) {
+        if (a > b) {
+            if(clickedByDate === false){
+                return 1;
+            }else{
+                return -1;
+            }
+        }
+        if (a === b) return 0;
+        if (a < b) {
+            if(clickedByDate === false){
+                return -1;
+            }else{
+                return 1;
+            }
         }
     }
     const sortByDateHandle = () => {
         setSortByStars(false);
         setSortByDate(true);
         setSortByName(false);
+        setClickedByDate(!clickedByDate);
+        setClickedByName(false);
+        setClickedByStars(false);
+        setActiveClass(arrowDownDate);
     };
     const sortByNameHandle = () => {
         setSortByStars(false);
         setSortByDate(false);
         setSortByName(true);
+        setClickedByName(!clickedByName);
+        setClickedByDate(false);
+        setClickedByStars(false);
+        setActiveClass(arrowDownName);
     };
     const sortByStarsHandle = () => {
         setSortByStars(true);
         setSortByDate(false);
         setSortByName(false);
+        setClickedByStars(!clickedByStars);
+        setClickedByName(false);
+        setClickedByDate(false);
+        setActiveClass(arrowDownStars);
     };
+
+    console.log(`Состояние нажатое по name: ${clickedByName}`);
+    console.log(`Состояние нажатое по date: ${clickedByDate}`);
+    console.log(`Состояние нажатое по stars: ${clickedByStars}`);
+    const arrowDownName = document.querySelector(".arrowDown-img.name");
+    const arrowDownDate = document.querySelector(".arrowDown-img.date");
+    const arrowDownStars = document.querySelector(".arrowDown-img.stars");
+    console.log(arrowDownName);
     return (
         <div>
             <div className={style["user"]}>
@@ -62,15 +114,23 @@ const UserCard = ({dataOfUser, Repositories}) => {
                 <div className={style["user__sorting"]}>
                     <h2 className={style["user__sorting-title"]}>Сортировка</h2>
                     <div className={style["user__sorting-buttons"]}>
-                        <button onClick={sortByNameHandle} className={`${style["user__sorting-button"]}`}>Имя</button>
-                        <button onClick={sortByStarsHandle} className={style["user__sorting-button"]}>Звезды</button>
-                        <button onClick={sortByDateHandle} className={style["user__sorting-button"]}>Дата</button>
+                        <button onClick={sortByNameHandle} className={`${style["user__sorting-button"]}`}>Имя
+                            <img className="arrowDown-img name" src={downArrowIcon} alt="arrow-down"/></button>
+                        <button onClick={sortByStarsHandle} className={style["user__sorting-button"]}>Звезды
+                            <img className="arrowDown-img stars" src={downArrowIcon} alt="arrow-down"/>
+                        </button>
+                        <button onClick={sortByDateHandle} className={style["user__sorting-button"]}>Дата
+                            <img className="arrowDown-img date" src={downArrowIcon} alt="arrow-down"/></button>
                     </div>
                     <div className={style["user__sorting-repositores"]}>
                         { sortByName ?
                             Repositories
                                 .sort((a, b) => {
-                                    return a.name.localeCompare(b.name);
+                                    if(clickedByName === false){
+                                        return a.name.localeCompare(b.name);
+                                    }else{
+                                        return b.name.localeCompare(a.name);
+                                    }
                                 })
                                 .map((repository, index) => {
                                     return (
@@ -94,7 +154,7 @@ const UserCard = ({dataOfUser, Repositories}) => {
                                         );
                                     })
                                 : sortByDate ?
-                                    Repositories.sort( (a, b) => compareNumeric(a.created_at, b.created_at)).map((repository, index) => {
+                                    Repositories.sort( (a, b) => compareDate(a.created_at, b.created_at)).map((repository, index) => {
                                         return (
                                             <UserRepository
                                                 key={index}
