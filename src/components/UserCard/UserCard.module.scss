@@ -127,7 +127,6 @@
   }
 }
 @media (max-width: 768px) {
-
 }
 @media (max-width: 425px) {
   .user{
@@ -140,13 +139,6 @@
       }
     }
   }
-  .main{
-    &__form{
-        &-input{
-            width: fit-content;
-        }
-    }
-  }
 }
 @media (max-width: 375px){
   .user {
@@ -157,15 +149,8 @@
         max-width: 320px;
         width: 100%;
       }
-    }
-  }
-  .user__sorting-button{
-    width: 117px
-  }
-  .main{
-    &__form{
-      &-input{
-        width: 351px;
+      &-button{
+        width: 117px
       }
     }
   }
