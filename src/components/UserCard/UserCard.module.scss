@@ -132,7 +132,12 @@
   .user{
     &__sorting{
       &-repository{
+        display: flex;
         width: 100%;
+        flex-direction: column;
+        gap: 19px;
+        padding: 13px;
+        max-width: 375px;
       }
       &-button{
         padding: 6px 27px;
