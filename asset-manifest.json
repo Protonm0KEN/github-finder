@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/github-finder/static/css/main.1162d128.css",
+    "main.css": "/github-finder/static/css/main.8f9f88b8.css",
     "main.js": "/github-finder/static/js/main.23d5da2e.js",
     "static/media/OpenSans-Medium.ttf": "/github-finder/static/media/OpenSans-Medium.a4894b36b47378c77c5f.ttf",
     "static/media/OpenSans-Regular.ttf": "/github-finder/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
     "static/media/OpenSans-Bold.ttf": "/github-finder/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
     "index.html": "/github-finder/index.html",
-    "main.1162d128.css.map": "/github-finder/static/css/main.1162d128.css.map",
+    "main.8f9f88b8.css.map": "/github-finder/static/css/main.8f9f88b8.css.map",
     "main.23d5da2e.js.map": "/github-finder/static/js/main.23d5da2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1162d128.css",
+    "static/css/main.8f9f88b8.css",
     "static/js/main.23d5da2e.js"
   ]
 }
