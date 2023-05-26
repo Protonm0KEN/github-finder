@@ -12,7 +12,7 @@ const UserCard = ({dataOfUser, Repositories}) => {
 
     const [sortByStars, setSortByStars ] = useState(false);
     const [sortByDate, setSortByDate ] = useState(false);
-    const [sortByName, setSortByName ] = useState(false);
+    const [sortByName, setSortByName ] = useState(true);
 
     const [clickedByName, setClickedByName] = useState(false);
     const [clickedByStars, setClickedByStars] = useState(false);
